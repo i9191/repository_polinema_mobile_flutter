@@ -35,7 +35,7 @@ class EntryFormState extends State<EntryForm> {
     //rubah
     return Scaffold(
       appBar: AppBar(
-        title: item == null ? Text('Tambah') : Text('Ubah'),
+        title: item.id == null ? Text('Tambah') : Text('Ubah'),
         leading: Icon(Icons.keyboard_arrow_left),
       ),
       body: Padding(

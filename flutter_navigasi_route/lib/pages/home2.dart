@@ -79,19 +79,17 @@ class HomeState extends State<home2> {
           elevation: 2.0,
           child: ListTile(
             leading: CircleAvatar(
-              backgroundColor: Colors.red,
-              child: Icon(Icons.ad_units),
+              backgroundImage: AssetImage('lib/assets/img/${itemList[index].img}'),
             ),
             title: Text(
               this.itemList[index].name,
               style: textStyle,
             ),
-            subtitle: Text(this.itemList[index].price.toString()),
+            subtitle: Text('${itemList[index].price} per ${itemList[index].unit}'),
             trailing: GestureDetector(
               child: Icon(Icons.delete),
               onTap: () async {
                 //TODO 3 Panggil Fungsi untuk Delete dari DB berdasarkan Item
-                // final item = itemList[index];
                 int result = await dbHelper.delete(itemList[index].id!);
                 if (result > 0) {
                   updateListView();

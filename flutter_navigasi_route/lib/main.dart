@@ -13,11 +13,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Tambahkan Item',
-      theme: ThemeData(
-        primarySwatch: Colors.blueGrey,
-      ),
-      // home: home2(),
+      // title: 'Tambahkan Item',
+      // theme: ThemeData(
+      //   primarySwatch: Colors.blueGrey,
+      // ),
+      // // home: home2(),
       initialRoute: '/',
       routes: {
         '/': (context) => home2(),
