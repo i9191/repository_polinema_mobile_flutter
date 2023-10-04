@@ -3,10 +3,10 @@ import 'package:flutter_navigasi_route/models/item.dart';
 
 class HomePage extends StatelessWidget {
   final List<Item> items = [
-    Item(name: 'Sugar', unit: "gram", price: 5000, img: "sugar.jpg"),
-    Item(name: 'Salt', unit: "gram", price: 2000, img: "salt.jpg"),
-    Item(name: 'Soy Sauce', unit: "liter", price: 6000, img: "kecap.jpg"),
-    Item(name: 'Cheese', unit: "gram", price: 6000, img: "cheese.jpg"),
+    Item(kode: '', name: 'Sugar', unit: "gram", price: 5000, stok: 0, img: "sugar.jpg"),
+    Item(kode: '', name: 'Salt', unit: "gram", price: 2000, stok: 0, img: "salt.jpg"),
+    Item(kode: '', name: 'Soy Sauce', unit: "liter", price: 6000, stok: 0, img: "kecap.jpg"),
+    Item(kode: '', name: 'Cheese', unit: "gram", price: 6000, stok: 0, img: "cheese.jpg"),
   ];
 
   @override

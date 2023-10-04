@@ -26,9 +26,11 @@ class DbHelper {
     await db.execute('''
     CREATE TABLE item (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
+    kode TEXT,
     name TEXT,
     unit TEXT,
     price INTEGER,
+    stok INTEGER,
     img TEXT DEFAULT 'default.jpg'
     )
     ''');

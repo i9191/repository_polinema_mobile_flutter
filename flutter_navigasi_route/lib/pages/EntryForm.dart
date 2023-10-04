@@ -12,17 +12,21 @@ class EntryForm extends StatefulWidget {
 class EntryFormState extends State<EntryForm> {
   Item item;
   EntryFormState(this.item);
+  TextEditingController kodeController = TextEditingController();
   TextEditingController nameController = TextEditingController();
   TextEditingController unitController = TextEditingController();
   TextEditingController priceController = TextEditingController();
+  TextEditingController stokController = TextEditingController();
   TextEditingController imgController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     //kondisi
     if (item.id != 0) {
+      kodeController.text = item.kode!;
       nameController.text = item.name!;
       unitController.text = item.unit!;
       priceController.text = item.price!.toString();
+      stokController.text = item.stok!.toString();
       imgController.text = item.img!;
     }else{
       item.id = null;
@@ -38,6 +42,23 @@ class EntryFormState extends State<EntryForm> {
         padding: EdgeInsets.only(top: 15.0, left: 10.0, right: 10.0),
         child: ListView(
           children: <Widget>[
+            // kode
+            Padding(
+              padding: EdgeInsets.only(top: 20.0, bottom: 20.0),
+              child: TextField(
+                controller: kodeController,
+                keyboardType: TextInputType.text,
+                decoration: InputDecoration(
+                  labelText: 'Kode Barang',
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(5.0),
+                  ),
+                ),
+                onChanged: (value) {
+                  //
+                },
+              ),
+            ),
             // nama
             Padding(
               padding: EdgeInsets.only(top: 20.0, bottom: 20.0),
@@ -89,10 +110,29 @@ class EntryFormState extends State<EntryForm> {
                 },
               ),
             ), 
+            // stok
+            Padding(
+              padding: EdgeInsets.only(top: 20.0, bottom: 20.0),
+              child: TextField(
+                controller: stokController,
+                keyboardType: TextInputType.number,
+                decoration: InputDecoration(
+                  labelText: 'Stok',
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(5.0),
+                  ),
+                ),
+                onChanged: (value) {
+                  //
+                },
+              ),
+            ), 
             // img
             Padding(
               padding: EdgeInsets.only(top: 20.0, bottom: 20.0),
               child: TextField(
+                //belum kepikiran
+                enabled: false,
                 controller: imgController,
                 keyboardType: TextInputType.text,
                 decoration: InputDecoration(
@@ -126,16 +166,20 @@ class EntryFormState extends State<EntryForm> {
                         if (item == null) {
                           // tambah data
                           item = Item(
+                              kode: kodeController.text,
                               name: nameController.text,
                               unit: unitController.text,
                               price: int.parse(priceController.text),
+                              stok: int.parse(stokController.text),
                               img: imgController.text
                               );
                         } else {
                           // ubah data
+                          item.kode = kodeController.text;
                           item.name = nameController.text;
                           item.unit = unitController.text;
                           item.price = int.parse(priceController.text);
+                          item.stok = int.parse(stokController.text);
                           item.img = imgController.text;
                         }
                         // kembali ke layar sebelumnya dengan membawa objek item

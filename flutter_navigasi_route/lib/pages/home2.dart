@@ -16,6 +16,13 @@ class HomeState extends State<home2> {
   DbHelper dbHelper = DbHelper();
   int count = 0;
   List<Item> itemList = <Item>[];
+  
+  @override
+  void initState() {
+    super.initState();
+    updateListView();
+  }
+
   @override
   Widget build(BuildContext context) {
     if (itemList == null) {
@@ -36,7 +43,7 @@ class HomeState extends State<home2> {
             child: ElevatedButton(
               child: Text("Tambah Item"),
               onPressed: () async {
-                Item initItem = Item(name: '',unit: '',price: 0,img: '');
+                Item initItem = Item(kode: '',name: '',unit: '',price: 0,stok: 0,img: '');
                 initItem.id = 0;
                 var item = await navigateToEntryForm(context, initItem);
                 if (item != null) {
