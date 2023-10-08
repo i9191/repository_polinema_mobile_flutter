@@ -18,5 +18,7 @@ flutter run -t lib\main.dart
 <img src="lib/assets/img/SS22.png" alt="screenshot" width="250" height="auto">
 <img src="lib/assets/img/SS21.png" alt="screenshot" width="250" height="auto">
 <img src="lib/assets/img/SS23.png" alt="screenshot" width="250" height="auto">
+<img src="lib/assets/img/SS24.png" alt="screenshot" width="250" height="auto">
+<img src="lib/assets/img/SS25.png" alt="screenshot" width="250" height="auto">
 
 

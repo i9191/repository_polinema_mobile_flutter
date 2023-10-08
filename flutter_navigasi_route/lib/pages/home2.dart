@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:sqflite/sqflite.dart';
 import 'dart:async';
@@ -79,7 +81,8 @@ class HomeState extends State<home2> {
           elevation: 2.0,
           child: ListTile(
             leading: CircleAvatar(
-              backgroundImage: AssetImage('lib/assets/img/${itemList[index].img}'),
+              // backgroundImage: AssetImage('lib/assets/img/${itemList[index].img}'),
+              backgroundImage: showItemImg(itemList[index].img),
             ),
             title: Text(
               this.itemList[index].name,
@@ -111,6 +114,15 @@ class HomeState extends State<home2> {
         );
       },
     );
+  }
+
+  showItemImg(String name){
+    var itemImg = File("/data/user/0/com.example.flutter_navigasi_route/app_flutter/$name").existsSync();
+    if(itemImg == true){
+      return FileImage(File("/data/user/0/com.example.flutter_navigasi_route/app_flutter/$name"));
+    }else{
+      return AssetImage('lib/assets/img/default.jpg');
+    }
   }
 
   //update List item
