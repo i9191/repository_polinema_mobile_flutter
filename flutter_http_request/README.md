@@ -1,16 +1,10 @@
 # flutter_http_request
 
-A new Flutter project.
+Ini Merupakan folder repository praktikum flutter http request ke [api.themoviedb.org](api.themoviedb.org).
 
-## Getting Started
+```
+flutter run -t lib\main.dart
+```
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<img src="lib/assets/img/SS1.png" alt="screenshot" width="250" height="auto">
+<img src="lib/assets/img/SS2.png" alt="screenshot" width="250" height="auto">
